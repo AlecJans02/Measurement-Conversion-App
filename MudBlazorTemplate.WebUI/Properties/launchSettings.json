@@ -16,7 +16,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Mudblazor.Template": {
+    "MudblazorTemplate.WebUI": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,
