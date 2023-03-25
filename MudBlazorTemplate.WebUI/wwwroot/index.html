@@ -11,15 +11,29 @@
 </head>
 
 <body>
-    <div id="app">Loading...</div>
-
-    <div id="blazor-error-ui">
-        An unhandled error has occurred.
-        <a href="" class="reload">Reload</a>
-        <a class="dismiss">🗙</a>
+<div id="app">
+    <!--Loading...-->
+    <script src="/js/lottie-player.js"></script>
+    <div class="lottie-container">
+        <lottie-player src="/loading.json" background="transparent" speed="1" style="width: 17em; height: 17em;" loop autoplay></lottie-player>
     </div>
-    <script src="_framework/blazor.webassembly.js"></script>
-    <script src="_content/MudBlazor/MudBlazor.min.js"></script>
+    <style>
+        .lottie-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+            height: 80vh;
+        }
+    </style>
+</div>
+<div id="blazor-error-ui">
+    An unhandled error has occurred.
+    <a href="" class="reload">Reload</a>
+    <a class="dismiss">🗙</a>
+</div>
+<script defer src="_framework/blazor.webassembly.js"></script>
+<script defer src="_content/MudBlazor/MudBlazor.min.js"></script>
 </body>
 
 </html>
