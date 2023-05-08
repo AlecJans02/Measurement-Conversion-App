@@ -1,6 +1,6 @@
 ﻿@inherits LayoutComponentBase
 
-<MudThemeProvider/>
+<MudThemeProvider @bind-IsDarkMode="@_isDarkMode" Theme="_theme" />
 <MudDialogProvider/>
 <MudSnackbarProvider/>
 
@@ -13,7 +13,7 @@
         <MudDrawerHeader>
             <MudText Typo="Typo.h6">Measurement Converstion App</MudText>
         </MudDrawerHeader>
-        <MudThemeProvider @bind-IsDarkMode="@_isDarkMode" Theme="_theme" />
+        
 <MudSwitch @bind-Checked="@_isDarkMode" Color="Color.Primary" Class="ma-4" T="bool" Label="Toggle Light/Dark Mode" />
         <NavMenu/>
     </MudDrawer>

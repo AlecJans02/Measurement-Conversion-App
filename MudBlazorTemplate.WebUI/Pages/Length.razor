@@ -5,37 +5,37 @@
 <MudPaper Class="d-flex justify-center" Elevation="0">
     <MudStack Style="width: 100%">
         <MudPaper Outlined="true" Class="pa-4 d-flex flex-wrap gap-15 border-hidden" Style="width: 100%">
-            <MudPaper Outlined="true" Style="width: 450px; box-shadow: none;" Class="boroder-none">
+            <MudPaper Elevation="0" Style="width: 450px; box-shadow: none;" Class="boroder-none">
             <MudText Typo="Typo.h3" GutterBottom="true" Class="mt-12" Align="Align.Center">Convert cm to Inches</MudText>
         <MudNumericField HideSpinButtons="true" @bind-Value="cm" Label="Enter cm" Variant="Variant.Outlined" Class="mt-4" />
         <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="getInches" Class="mt-4">Convert</MudButton>
         <MudField Label="Inches" Variant="Variant.Outlined" Class="mt-4">@totalInches</MudField>
         </MudPaper>
-            <MudPaper Outlined="true" Style="width: 450px" Class="boroder-hidden">
+            <MudPaper Elevation="0" Style="width: 450px" Class="boroder-hidden">
         <MudText Typo="Typo.h3" GutterBottom="true" Class="mt-12" Align="Align.Center">Convert Inches to cm</MudText>
         <MudNumericField HideSpinButtons="true" @bind-Value="Inches" Label="Enter Inches" Variant="Variant.Outlined" Class="mt-4" />
         <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="getcm" Class="mt-4">Convert</MudButton>
         <MudField Label="cm" Variant="Variant.Outlined" Class="mt-4">@totalcm</MudField>
         </MudPaper>
-            <MudPaper Outlined="true" Style="width: 450px" Class="boroder-hidden">
+            <MudPaper Elevation="0" Style="width: 450px" Class="boroder-hidden">
             <MudText Typo="Typo.h3" GutterBottom="true" Class="mt-12" Align="Align.Center">Convert Meters to Feet</MudText>
         <MudNumericField HideSpinButtons="true" @bind-Value="Meters" Label="Enter Metres" Variant="Variant.Outlined" Class="mt-4" />
         <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="getFeet" Class="mt-4">Convert</MudButton>
         <MudField Label="Feet" Variant="Variant.Outlined" Class="mt-4">@totalFeet</MudField>
         </MudPaper>
-            <MudPaper Outlined="true" Style="width: 450px" Class="boroder-hidden">
+            <MudPaper Elevation="0" Style="width: 450px" Class="boroder-hidden">
         <MudText Typo="Typo.h3" GutterBottom="true" Class="mt-12" Align="Align.Center">Convert Feet to Meters</MudText>
         <MudNumericField HideSpinButtons="true" @bind-Value="Feet" Label="Enter Feet" Variant="Variant.Outlined" Class="mt-4" />
         <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="getMeters" Class="mt-4">Convert</MudButton>
         <MudField Label="Meters" Variant="Variant.Outlined" Class="mt-4">@totalMeters</MudField>
         </MudPaper>
-            <MudPaper Outlined="true" Style="width: 450px" Class="boroder-hidden">
+            <MudPaper Elevation="0" Style="width: 450px" Class="boroder-hidden">
             <MudText Typo="Typo.h3" GutterBottom="true" Class="mt-12" Align="Align.Center">Convert KM to Miles</MudText>
         <MudNumericField HideSpinButtons="true" @bind-Value="KM" Label="Enter KM" Variant="Variant.Outlined" Class="mt-4" />
         <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="getMiles" Class="mt-4">Convert</MudButton>
         <MudField Label="Miles" Variant="Variant.Outlined" Class="mt-4">@totalMiles</MudField>
         </MudPaper>
-            <MudPaper Outlined="true" Style="width: 450px" Class="boroder-hidden">
+            <MudPaper Elevation="0" Style="width: 450px" Class="boroder-hidden">
         <MudText Typo="Typo.h3" GutterBottom="true" Class="mt-12" Align="Align.Center">Convert Miles to KM</MudText>
         <MudNumericField HideSpinButtons="true" @bind-Value="Miles" Label="Enter Miles" Variant="Variant.Outlined" Class="mt-4" />
         <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="getKM" Class="mt-4">Convert</MudButton>
