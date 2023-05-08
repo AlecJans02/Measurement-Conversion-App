@@ -1,0 +1,38 @@
+﻿@page "/temperature"
+
+<PageTitle>Temperature</PageTitle>
+
+<MudPaper Class="d-flex justify-center" Elevation="0">
+    <MudStack Class="pa-4" Style="width: 450px">
+        <MudText Typo="Typo.h3" GutterBottom="true" Align="Align.Center">Convert Celsius to Fahrenheit</MudText>
+        <MudNumericField HideSpinButtons="true" @bind-Value="Celsius" Label="Enter Celsius" Variant="Variant.Outlined" Class="mt-4" />
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="getFahrenheit" Class="mt-4">Convert</MudButton>
+        <MudField Label="Fahrenheit" Variant="Variant.Outlined" Class="mt-4">@totalFahrenheit</MudField>
+        <MudText Typo="Typo.h3" GutterBottom="true" Class="mt-12" Align="Align.Center">Convert Fahrenheit to Celsius</MudText>
+        <MudNumericField HideSpinButtons="true" @bind-Value="Fahrenheit" Label="Enter Fahrenheit" Variant="Variant.Outlined" Class="mt-4" />
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="getCelsius" Class="mt-4">Convert</MudButton>
+        <MudField Label="Celsius" Variant="Variant.Outlined" Class="mt-4">@totalCelsius</MudField>
+    </MudStack>
+</MudPaper>
+
+
+@code {
+
+    double Celsius { get; set; }
+
+    double totalFahrenheit { get; set; }
+
+    double Fahrenheit { get; set; }
+
+    double totalCelsius { get; set; }
+
+    public void getFahrenheit()
+    {
+        totalFahrenheit = Celsius * 1.8 + 32;
+    }
+
+    public void getCelsius()
+    {
+        totalCelsius = (Fahrenheit -32) / 1.8;
+    }
+}

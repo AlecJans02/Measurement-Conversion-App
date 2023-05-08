@@ -1,0 +1,38 @@
+﻿@page "/pressure"
+
+<PageTitle>Pressure</PageTitle>
+
+<MudPaper Class="d-flex justify-center" Elevation="0">
+    <MudStack Class="pa-4" Style="width: 450px">
+        <MudText Typo="Typo.h3" GutterBottom="true" Align="Align.Center">Convert PSI to Bar</MudText>
+        <MudNumericField HideSpinButtons="true" @bind-Value="PSI" Label="Enter PSI" Variant="Variant.Outlined" Class="mt-4" />
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="getBar" Class="mt-4">Convert</MudButton>
+        <MudField Label="Bar" Variant="Variant.Outlined" Class="mt-4">@totalBar</MudField>
+        <MudText Typo="Typo.h3" GutterBottom="true" Class="mt-12" Align="Align.Center">Convert Bar to PSI</MudText>
+        <MudNumericField HideSpinButtons="true" @bind-Value="Bar" Label="Enter Bar" Variant="Variant.Outlined" Class="mt-4" />
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="getPSI" Class="mt-4">Convert</MudButton>
+        <MudField Label="PSI" Variant="Variant.Outlined" Class="mt-4">@totalPSI</MudField>
+    </MudStack>
+</MudPaper>
+
+
+@code {
+
+    double PSI { get; set; }
+
+    double totalBar { get; set; }
+
+    double Bar { get; set; }
+
+    double totalPSI { get; set; }
+
+    public void getBar()
+    {
+        totalBar = PSI / 14.504;
+    }
+
+    public void getPSI()
+    {
+        totalPSI = Bar * 14.504;
+    }
+}

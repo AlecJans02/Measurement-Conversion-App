@@ -1,0 +1,39 @@
+﻿@page "/area"
+
+<PageTitle>Area</PageTitle>
+
+
+<MudPaper Class="d-flex justify-center" Elevation="0">
+    <MudStack Class="pa-4" Style="width: 450px">
+        <MudText Typo="Typo.h3" GutterBottom="true" Align="Align.Center">Convert Acres to Hectares</MudText>
+        <MudNumericField HideSpinButtons="true" @bind-Value="Acres" Label="Enter Acres" Variant="Variant.Outlined" Class="mt-4"/>
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="getHectares" Class="mt-4">Convert</MudButton>
+        <MudField Label="Hectares" Variant="Variant.Outlined" Class="mt-4">@totalHectares</MudField>
+        <MudText Typo="Typo.h3" GutterBottom="true" Class="mt-12" Align="Align.Center">Convert Hectares to Acres</MudText>
+        <MudNumericField HideSpinButtons="true" @bind-Value="Hectares" Label="Enter Hectares" Variant="Variant.Outlined" Class="mt-4" />
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="getAcres" Class="mt-4">Convert</MudButton>
+        <MudField Label="Hectares" Variant="Variant.Outlined" Class="mt-4">@totalAcres</MudField>
+    </MudStack>
+</MudPaper>
+
+
+@code {
+
+    double Acres { get; set; }
+
+    double totalHectares { get; set; }
+
+    double Hectares { get; set; }
+
+    double totalAcres { get; set; }
+
+    public void getHectares()
+    {
+        totalHectares = Acres / 2.471;
+    }
+
+    public void getAcres()
+    {
+        totalAcres = Hectares * 2.471;
+    }
+}

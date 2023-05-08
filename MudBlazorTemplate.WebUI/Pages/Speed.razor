@@ -1,0 +1,38 @@
+﻿@page "/speed"
+
+<PageTitle>Speed</PageTitle>
+
+<MudPaper Class="d-flex justify-center" Elevation="0">
+    <MudStack Class="pa-4" Style="width: 450px">
+        <MudText Typo="Typo.h3" GutterBottom="true" Align="Align.Center">Convert KMP/H to MP/H</MudText>
+        <MudNumericField HideSpinButtons="true" @bind-Value="KMPH" Label="Enter KMP/H" Variant="Variant.Outlined" Class="mt-4" />
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="getMPH" Class="mt-4">Convert</MudButton>
+        <MudField Label="MP/H" Variant="Variant.Outlined" Class="mt-4">@totalMPH</MudField>
+        <MudText Typo="Typo.h3" GutterBottom="true" Class="mt-12" Align="Align.Center">Convert MP/H to KMP/H</MudText>
+        <MudNumericField HideSpinButtons="true" @bind-Value="MPH" Label="Enter MPH" Variant="Variant.Outlined" Class="mt-4" />
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="getKMPH" Class="mt-4">Convert</MudButton>
+        <MudField Label="KMP/H" Variant="Variant.Outlined" Class="mt-4">@totalKMPH</MudField>
+    </MudStack>
+</MudPaper>
+
+
+@code {
+
+    double KMPH { get; set; }
+
+    double totalMPH { get; set; }
+
+    double MPH { get; set; }
+
+    double totalKMPH { get; set; }
+
+    public void getMPH()
+    {
+        totalMPH = KMPH / 1.609;
+    }
+
+    public void getKMPH()
+    {
+        totalKMPH = MPH * 1.609;
+    }
+}

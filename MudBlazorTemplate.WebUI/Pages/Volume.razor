@@ -1,0 +1,38 @@
+﻿@page "/volume"
+
+<PageTitle>Volume/Liquid</PageTitle>
+
+<MudPaper Class="d-flex justify-center" Elevation="0">
+    <MudStack Class="pa-4" Style="width: 450px">
+        <MudText Typo="Typo.h3" GutterBottom="true" Align="Align.Center">Convert Litres to Gallons</MudText>
+        <MudNumericField HideSpinButtons="true" @bind-Value="Litres" Label="Enter Litres" Variant="Variant.Outlined" Class="mt-4" />
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="getGallons" Class="mt-4">Convert</MudButton>
+        <MudField Label="Gallons" Variant="Variant.Outlined" Class="mt-4">@totalGallons</MudField>
+        <MudText Typo="Typo.h3" GutterBottom="true" Class="mt-12" Align="Align.Center">Convert Gallons to Litres</MudText>
+        <MudNumericField HideSpinButtons="true" @bind-Value="Gallons" Label="Enter Gallons" Variant="Variant.Outlined" Class="mt-4" />
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="getLitres" Class="mt-4">Convert</MudButton>
+        <MudField Label="Litres" Variant="Variant.Outlined" Class="mt-4">@totalLitres</MudField>
+    </MudStack>
+</MudPaper>
+
+
+@code {
+
+    double Litres { get; set; }
+
+    double totalGallons { get; set; }
+
+    double Gallons { get; set; }
+
+    double totalLitres { get; set; }
+
+    public void getGallons()
+    {
+        totalGallons = Litres / 3.785;
+    }
+
+    public void getLitres()
+    {
+        totalLitres = Gallons * 3.785;
+    }
+}

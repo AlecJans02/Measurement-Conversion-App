@@ -1,0 +1,38 @@
+﻿@page "/weight"
+
+<PageTitle>Weight</PageTitle>
+
+<MudPaper Class="d-flex justify-center" Elevation="0">
+    <MudStack Class="pa-4" Style="width: 450px">
+        <MudText Typo="Typo.h3" GutterBottom="true" Align="Align.Center">Convert KG to Pounds</MudText>
+        <MudNumericField HideSpinButtons="true" @bind-Value="KG" Label="Enter KG" Variant="Variant.Outlined" Class="mt-4" />
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="getPounds" Class="mt-4">Convert</MudButton>
+        <MudField Label="Pounds" Variant="Variant.Outlined" Class="mt-4">@totalPounds</MudField>
+        <MudText Typo="Typo.h3" GutterBottom="true" Class="mt-12" Align="Align.Center">Convert Pounds to KG</MudText>
+        <MudNumericField HideSpinButtons="true" @bind-Value="Pounds" Label="Enter Pounds" Variant="Variant.Outlined" Class="mt-4" />
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="getKG" Class="mt-4">Convert</MudButton>
+        <MudField Label="KG" Variant="Variant.Outlined" Class="mt-4">@totalKG</MudField>
+    </MudStack>
+</MudPaper>
+
+
+@code {
+
+    double KG { get; set; }
+
+    double totalPounds { get; set; }
+
+    double Pounds { get; set; }
+
+    double totalKG { get; set; }
+
+    public void getPounds()
+    {
+        totalPounds = KG * 2.205;
+    }
+
+    public void getKG()
+    {
+        totalKG = Pounds / 2.205;
+    }
+}
